@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Apps;
 
 use App\Http\Controllers\Controller;
+use App\Models\Room;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -15,14 +16,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-      $data = [
-        'name' => 'wawan',
-        'age' => 26
-      ];
-
-      return Inertia::render('Apps/Index', [
-        'data' => $data
-      ]);
+        //
     }
 
     /**
@@ -54,7 +48,10 @@ class BookingController extends Controller
      */
     public function show($id)
     {
-        //
+      $room = Room::findOrFail($id);
+      return Inertia::render('Apps/Home/Booking', [
+        'room' => $room
+      ]);
     }
 
     /**

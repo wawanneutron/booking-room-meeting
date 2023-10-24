@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\Apps\Dashboard\BookedRoomController;
+use App\Http\Controllers\Apps\Dashboard\ManageRoomController;
+use App\Http\Controllers\Apps\Dashboard\DashboardController;
 use App\Http\Controllers\Apps\BookingController;
-use App\Http\Controllers\Apps\DashboardController;
+use App\Http\Controllers\Apps\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,12 +18,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [BookingController::class, 'index']);
-
+Route::get('/', HomeController::class)->name('home');
+Route::resource('/booking-room', BookingController::class);
 
 Route::prefix('admin')->group(function() {
   Route::group(['middleware' => ['auth']], function () {
     Route::resource('dashboard', DashboardController::class, ['as' => 'admin']);
+    Route::resource('manage-room', ManageRoomController::class, ['as' => 'admin']);
+    Route::get('booked-room', BookedRoomController::class)->name('admin.booked-room');
   });
 });
 
