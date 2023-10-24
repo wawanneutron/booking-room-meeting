@@ -4,17 +4,17 @@
             class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show"
             id="sidebar"
         >
-            <div
+            <!-- <div
                 class="c-sidebar-brand d-lg-down-none"
                 style="background: #894b9d"
             >
-                <!-- <img
+                <img
                   src="/images/cash-machine.png"
                   class="bg-light rounded shadow-sm p-1"
                   width="35"
-              /> -->
+              />
                 <span class="ml-2 font-weight-bold">Booking Room</span>
-            </div>
+            </div> -->
 
             <!-- sidebar -->
             <Sidebar />
@@ -31,7 +31,13 @@
                 <!-- end content -->
 
                 <footer class="c-footer">
-                    <div><strong></strong> &copy; 2023</div>
+                    <div>
+                        <p class="footer-coppyright">
+                            <strong>Booking Room</strong> - PT Infra Solusi
+                            Indonesia (i-Solution) © {{ yearNow }} All Rights
+                            Reserved
+                        </p>
+                    </div>
                 </footer>
             </div>
         </div>
@@ -41,6 +47,7 @@
 <script>
 import Header from "../Components/Dashboard/Header.vue";
 import Sidebar from "../Components/Dashboard/Sidebar.vue";
+import { computed } from "vue";
 
 export default {
     //register components
@@ -48,5 +55,22 @@ export default {
         Header,
         Sidebar,
     },
+
+    setup() {
+        const yearNow = computed(() => {
+            return new Date().getFullYear();
+        });
+
+        return {
+            yearNow,
+        };
+    },
 };
 </script>
+
+<style lang="css" scoped>
+.footer-coppyright {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+</style>

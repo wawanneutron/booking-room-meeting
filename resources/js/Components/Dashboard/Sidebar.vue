@@ -3,8 +3,8 @@
         <li class="c-sidebar-nav-item">
             <Link
                 class="c-sidebar-nav-link"
-                :class="{ active: $page.url.startsWith('/apps/dashboard') }"
-                href="/apps/dashboard"
+                href="/admin/dashboard"
+                :class="{ active: $page.url.startsWith('/admin/dashboard') }"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -29,8 +29,8 @@
         <li class="c-sidebar-nav-item">
             <Link
                 class="c-sidebar-nav-link"
-                href="/apps/categories"
-                :class="{ active: $page.url.startsWith('/apps/categories') }"
+                href="/admin/booked-room"
+                :class="{ active: $page.url.startsWith('/admin/booked-room') }"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -53,8 +53,8 @@
         <li class="c-sidebar-nav-item">
             <Link
                 class="c-sidebar-nav-link"
-                href="/apps/categories"
-                :class="{ active: $page.url.startsWith('/apps/categories') }"
+                href="/admin/manage-room"
+                :class="{ active: $page.url.startsWith('/admin/manage-room') }"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

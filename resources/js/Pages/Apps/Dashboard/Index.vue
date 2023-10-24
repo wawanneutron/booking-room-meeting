@@ -6,7 +6,7 @@
     <main class="c-main">
         <div class="container-fluid">
             <div class="fade-in">
-                <h1>Hello World</h1>
+                <h1>Dashboard</h1>
             </div>
         </div>
     </main>
